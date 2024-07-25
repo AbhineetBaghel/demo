@@ -1994,13 +1994,13 @@ var tempI64;
 // === Body ===
 
 var ASM_CONSTS = {
-  6008448: function() {return Module.webglContextAttributes.premultipliedAlpha;},  
- 6008509: function() {return Module.webglContextAttributes.preserveDrawingBuffer;},  
- 6008573: function() {return Module.webglContextAttributes.powerPreference;},  
- 6008631: function() {Module['emscripten_get_now_backup'] = performance.now;},  
- 6008686: function($0) {performance.now = function() { return $0; };},  
- 6008734: function($0) {performance.now = function() { return $0; };},  
- 6008782: function() {performance.now = Module['emscripten_get_now_backup'];}
+  6006096: function() {return Module.webglContextAttributes.premultipliedAlpha;},  
+ 6006157: function() {return Module.webglContextAttributes.preserveDrawingBuffer;},  
+ 6006221: function() {return Module.webglContextAttributes.powerPreference;},  
+ 6006279: function() {Module['emscripten_get_now_backup'] = performance.now;},  
+ 6006334: function($0) {performance.now = function() { return $0; };},  
+ 6006382: function($0) {performance.now = function() { return $0; };},  
+ 6006430: function() {performance.now = Module['emscripten_get_now_backup'];}
 };
 
 
@@ -5530,23 +5530,6 @@ var ASM_CONSTS = {
   			return -6;
   
   		instance.ws.send(HEAPU8.buffer.slice(bufferPtr, bufferPtr + length));
-  
-  		return 0;
-  
-  	}
-
-  function _WebSocketSendText(instanceId, message) {
-  
-  		var instance = webSocketState.instances[instanceId];
-  		if (!instance) return -1;
-  
-  		if (!instance.ws)
-  			return -3;
-  
-  		if (instance.ws.readyState !== 1)
-  			return -6;
-  
-  		instance.ws.send(UTF8ToString(message));
   
   		return 0;
   
@@ -16885,7 +16868,6 @@ var asmLibraryArg = {
   "WebSocketFree": _WebSocketFree,
   "WebSocketGetState": _WebSocketGetState,
   "WebSocketSend": _WebSocketSend,
-  "WebSocketSendText": _WebSocketSendText,
   "WebSocketSetOnClose": _WebSocketSetOnClose,
   "WebSocketSetOnError": _WebSocketSetOnError,
   "WebSocketSetOnMessage": _WebSocketSetOnMessage,
